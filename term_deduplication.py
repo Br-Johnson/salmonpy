@@ -98,7 +98,7 @@ def deduplicate_proposed_terms(
     df['age_base_label'] = df['label_pattern'].str.replace(r'\s*age\s*\d+\s*', ' ', case=False, regex=True).str.strip().str.replace(r'\s+', ' ', regex=True)
 
     # Detect phase-stratified patterns (e.g., "Ocean Catch", "Terminal Run")
-    phase_prefixes = ['ocean', 'terminal', 'mainstem', 'marine', 'freshwater', 'in[-\s]?river']
+    phase_prefixes = ['ocean', 'terminal', 'mainstem', 'marine', 'freshwater', r'in[-\s]?river']
     phase_pattern = r'^(' + '|'.join(phase_prefixes) + r')\s+'
     df['is_phase_variant'] = df['label_pattern'].str.contains(phase_pattern, case=False, regex=True, na=False)
     df['phase_base_label'] = df['label_pattern'].str.replace(phase_pattern, '', case=False, regex=True).str.strip()
