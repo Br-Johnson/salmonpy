@@ -1,0 +1,142 @@
+role,label,domain,vocab_type,ttl_url,json_url
+property,SI Quantities,all,,https://i-adopt.github.io/terminologies/data/SI_Quantities.ttl,https://i-adopt.github.io/terminologies/data/SI_Quantities.json
+unit,SI Units,all,,https://i-adopt.github.io/terminologies/data/SI_Units.ttl,https://i-adopt.github.io/terminologies/data/SI_Units.json
+entity,anatomical entity ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/aeo.ttl,https://i-adopt.github.io/terminologies/data/aeo.json
+entity,The Amphioxus Development and Anatomy Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/amphx.ttl,https://i-adopt.github.io/terminologies/data/amphx.json
+property,anaeethes,agricultural sciences,SKOS,https://i-adopt.github.io/terminologies/data/anaeethes.ttl,https://i-adopt.github.io/terminologies/data/anaeethes.json
+entity,anaeethes,agricultural sciences,SKOS,https://i-adopt.github.io/terminologies/data/anaeethes.ttl,https://i-adopt.github.io/terminologies/data/anaeethes.json
+constraint,anaeethes,agricultural sciences,SKOS,https://i-adopt.github.io/terminologies/data/anaeethes.ttl,https://i-adopt.github.io/terminologies/data/anaeethes.json
+method,anaeethes,agricultural sciences,SKOS,https://i-adopt.github.io/terminologies/data/anaeethes.ttl,https://i-adopt.github.io/terminologies/data/anaeethes.json
+unit,anaeethes,agricultural sciences,SKOS,https://i-adopt.github.io/terminologies/data/anaeethes.ttl,https://i-adopt.github.io/terminologies/data/anaeethes.json
+property,Ascomycete phenotype ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/apo.ttl,https://i-adopt.github.io/terminologies/data/apo.json
+variable,Biodiversity Thesaurus,biodiversity conservation; ecology; environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/biodiversity_thesaurus.ttl,https://i-adopt.github.io/terminologies/data/biodiversity_thesaurus.json
+property,Biodiversity Thesaurus,biodiversity conservation; ecology; environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/biodiversity_thesaurus.ttl,https://i-adopt.github.io/terminologies/data/biodiversity_thesaurus.json
+entity,Biodiversity Thesaurus,biodiversity conservation; ecology; environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/biodiversity_thesaurus.ttl,https://i-adopt.github.io/terminologies/data/biodiversity_thesaurus.json
+variable,BODC Parameter Usage Vocabulary,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/bodc_puv_p01.ttl,https://i-adopt.github.io/terminologies/data/bodc_puv_p01.json
+property,BODC Parameter Usage Vocabulary,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/bodc_puv_p01.ttl,https://i-adopt.github.io/terminologies/data/bodc_puv_p01.json
+entity,BODC Parameter Usage Vocabulary,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/bodc_puv_p01.ttl,https://i-adopt.github.io/terminologies/data/bodc_puv_p01.json
+method,BODC Parameter Usage Vocabulary,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/bodc_puv_p01.ttl,https://i-adopt.github.io/terminologies/data/bodc_puv_p01.json
+unit,BODC units,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/bodc_units.ttl,https://i-adopt.github.io/terminologies/data/bodc_units.json
+variable,CF (Climate and Forecast) Standard Names,earth and related environmental sciences; climatology,SKOS,https://i-adopt.github.io/terminologies/data/cf.ttl,https://i-adopt.github.io/terminologies/data/cf.json
+property,CF (Climate and Forecast) Standard Names,earth and related environmental sciences; climatology,SKOS,https://i-adopt.github.io/terminologies/data/cf.ttl,https://i-adopt.github.io/terminologies/data/cf.json
+entity,CF (Climate and Forecast) Standard Names,earth and related environmental sciences; climatology,SKOS,https://i-adopt.github.io/terminologies/data/cf.ttl,https://i-adopt.github.io/terminologies/data/cf.json
+constraint,CF (Climate and Forecast) Standard Names,earth and related environmental sciences; climatology,SKOS,https://i-adopt.github.io/terminologies/data/cf.ttl,https://i-adopt.github.io/terminologies/data/cf.json
+entity,Cell Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/cl.ttl,https://i-adopt.github.io/terminologies/data/cl.json
+entity,Clytia hemisphaerica Development and Anatomy Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/clyh.ttl,https://i-adopt.github.io/terminologies/data/clyh.json
+variable,Clinical measurement ontology,,ontology,https://i-adopt.github.io/terminologies/data/cmo.ttl,https://i-adopt.github.io/terminologies/data/cmo.json
+property,Clinical measurement ontology,,ontology,https://i-adopt.github.io/terminologies/data/cmo.ttl,https://i-adopt.github.io/terminologies/data/cmo.json
+variable,Wheat Trait Ontology,agricultural sciences,thesaurus,https://i-adopt.github.io/terminologies/data/co-wheat.ttl,https://i-adopt.github.io/terminologies/data/co-wheat.json
+property,Wheat Trait Ontology,agricultural sciences,thesaurus,https://i-adopt.github.io/terminologies/data/co-wheat.ttl,https://i-adopt.github.io/terminologies/data/co-wheat.json
+constraint,Wheat Trait Ontology,agricultural sciences,thesaurus,https://i-adopt.github.io/terminologies/data/co-wheat.ttl,https://i-adopt.github.io/terminologies/data/co-wheat.json
+entity,ctenophore ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/cteno.ttl,https://i-adopt.github.io/terminologies/data/cteno.json
+entity,Dictyostelium discoideum anatomy ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/ddnat.ttl,https://i-adopt.github.io/terminologies/data/ddnat.json
+property,Drosophila Phenotype Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/dpo.ttl,https://i-adopt.github.io/terminologies/data/dpo.json
+entity,The Echinoderm Anatomy and Development Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/ecao.ttl,https://i-adopt.github.io/terminologies/data/ecao.json
+variable,The Ecosystem Ontology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/ecso.ttl,https://i-adopt.github.io/terminologies/data/ecso.json
+property,The Ecosystem Ontology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/ecso.ttl,https://i-adopt.github.io/terminologies/data/ecso.json
+entity,The Ecosystem Ontology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/ecso.ttl,https://i-adopt.github.io/terminologies/data/ecso.json
+constraint,The Ecosystem Ontology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/ecso.ttl,https://i-adopt.github.io/terminologies/data/ecso.json
+method,The Ecosystem Ontology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/ecso.ttl,https://i-adopt.github.io/terminologies/data/ecso.json
+entity,Mouse Developmental Anatomy Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/emapa.ttl,https://i-adopt.github.io/terminologies/data/emapa.json
+variable,The Environment Ontology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/envo.ttl,https://i-adopt.github.io/terminologies/data/envo.json
+entity,The Environment Ontology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/envo.ttl,https://i-adopt.github.io/terminologies/data/envo.json
+variable,EnvThes,earth and related environmental sciences,thesaurus,https://i-adopt.github.io/terminologies/data/envthes.ttl,https://i-adopt.github.io/terminologies/data/envthes.json
+property,EnvThes,earth and related environmental sciences,thesaurus,https://i-adopt.github.io/terminologies/data/envthes.ttl,https://i-adopt.github.io/terminologies/data/envthes.json
+entity,EnvThes,earth and related environmental sciences,thesaurus,https://i-adopt.github.io/terminologies/data/envthes.ttl,https://i-adopt.github.io/terminologies/data/envthes.json
+constraint,EnvThes,earth and related environmental sciences,thesaurus,https://i-adopt.github.io/terminologies/data/envthes.ttl,https://i-adopt.github.io/terminologies/data/envthes.json
+method,EnvThes,earth and related environmental sciences,thesaurus,https://i-adopt.github.io/terminologies/data/envthes.ttl,https://i-adopt.github.io/terminologies/data/envthes.json
+variable,eReefs environment/observable-properties,hydrology,SKOS,https://i-adopt.github.io/terminologies/data/ereefs.ttl,https://i-adopt.github.io/terminologies/data/ereefs.json
+property,eReefs environment/observable-properties,hydrology,SKOS,https://i-adopt.github.io/terminologies/data/ereefs.ttl,https://i-adopt.github.io/terminologies/data/ereefs.json
+entity,eReefs environment/observable-properties,hydrology,SKOS,https://i-adopt.github.io/terminologies/data/ereefs.ttl,https://i-adopt.github.io/terminologies/data/ereefs.json
+entity,Fungal gross anatomy,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/fao.ttl,https://i-adopt.github.io/terminologies/data/fao.json
+entity,Drosophila gross anatomy,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/fbbt.ttl,https://i-adopt.github.io/terminologies/data/fbbt.json
+entity,Drosophila development,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/fbdv.ttl,https://i-adopt.github.io/terminologies/data/fbdv.json
+property,Fish Traits Thesaurus,Animal ecology; biodiversity; Functional morphology,thesaurus,https://i-adopt.github.io/terminologies/data/fishtraits.ttl,https://i-adopt.github.io/terminologies/data/fishtraits.json
+entity,Fish Traits Thesaurus,Animal ecology; biodiversity; Functional morphology,thesaurus,https://i-adopt.github.io/terminologies/data/fishtraits.ttl,https://i-adopt.github.io/terminologies/data/fishtraits.json
+method,Fish Traits Thesaurus,Animal ecology; biodiversity; Functional morphology,thesaurus,https://i-adopt.github.io/terminologies/data/fishtraits.ttl,https://i-adopt.github.io/terminologies/data/fishtraits.json
+property,Flora Phenotype Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/flopo.ttl,https://i-adopt.github.io/terminologies/data/flopo.json
+property,FuTRES Ontology of Vertebrate Traits,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/fovt.ttl,https://i-adopt.github.io/terminologies/data/fovt.json
+entity,French Crop Usage Thesaurus,agricultural sciences,thesaurus,https://i-adopt.github.io/terminologies/data/frenchcropusage.ttl,https://i-adopt.github.io/terminologies/data/frenchcropusage.json
+property,Fission yeast phenotype ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/fypo.ttl,https://i-adopt.github.io/terminologies/data/fypo.json
+entity,Hymenoptera Anatomy Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/hao.ttl,https://i-adopt.github.io/terminologies/data/hao.json
+property,Human phenotype ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/hp.ttl,https://i-adopt.github.io/terminologies/data/hp.json
+variable,ICES Parameters,marine biology,SKOS,https://i-adopt.github.io/terminologies/data/ices.ttl,https://i-adopt.github.io/terminologies/data/ices.json
+property,ICES Parameters,marine biology,SKOS,https://i-adopt.github.io/terminologies/data/ices.ttl,https://i-adopt.github.io/terminologies/data/ices.json
+entity,ICES Parameters,marine biology,SKOS,https://i-adopt.github.io/terminologies/data/ices.ttl,https://i-adopt.github.io/terminologies/data/ices.json
+constraint,ICES Parameters,marine biology,SKOS,https://i-adopt.github.io/terminologies/data/ices.ttl,https://i-adopt.github.io/terminologies/data/ices.json
+method,ICES Parameters,marine biology,SKOS,https://i-adopt.github.io/terminologies/data/ices.ttl,https://i-adopt.github.io/terminologies/data/ices.json
+variable,Linked Earth Ontology,earth and related environmental sciences,,https://i-adopt.github.io/terminologies/data/lipd.ttl,https://i-adopt.github.io/terminologies/data/lipd.json
+variable,US LTER Controlled Vocabulary,earth and related environmental sciences,controlled vocabulary,https://i-adopt.github.io/terminologies/data/lter.ttl,https://i-adopt.github.io/terminologies/data/lter.json
+entity,US LTER Controlled Vocabulary,earth and related environmental sciences,controlled vocabulary,https://i-adopt.github.io/terminologies/data/lter.ttl,https://i-adopt.github.io/terminologies/data/lter.json
+entity,Mouse Adult Gross Anatomy,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/ma.ttl,https://i-adopt.github.io/terminologies/data/ma.json
+variable,Macroalgae Traits Thesaurus,biodiversity; Functional morphology,thesaurus,https://i-adopt.github.io/terminologies/data/macroalgaetraits.ttl,https://i-adopt.github.io/terminologies/data/macroalgaetraits.json
+property,Macroalgae Traits Thesaurus,biodiversity; Functional morphology,thesaurus,https://i-adopt.github.io/terminologies/data/macroalgaetraits.ttl,https://i-adopt.github.io/terminologies/data/macroalgaetraits.json
+constraint,Macroalgae Traits Thesaurus,biodiversity; Functional morphology,thesaurus,https://i-adopt.github.io/terminologies/data/macroalgaetraits.ttl,https://i-adopt.github.io/terminologies/data/macroalgaetraits.json
+property,Marine Species Traits,marine biology,,https://i-adopt.github.io/terminologies/data/marine_species_traits.ttl,https://i-adopt.github.io/terminologies/data/marine_species_traits.json
+entity,Marine Species Traits,marine biology,,https://i-adopt.github.io/terminologies/data/marine_species_traits.ttl,https://i-adopt.github.io/terminologies/data/marine_species_traits.json
+entity,Mammalian Feeding Muscle Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/mfmo.ttl,https://i-adopt.github.io/terminologies/data/mfmo.json
+property,Ontology of Prokaryotic Phenotypic and Metabolic Characters,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/micro.ttl,https://i-adopt.github.io/terminologies/data/micro.json
+property,Mammalian Phenotype Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/mp.ttl,https://i-adopt.github.io/terminologies/data/mp.json
+property,Neuro Behavior Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/nbo.ttl,https://i-adopt.github.io/terminologies/data/nbo.json
+entity,Ontology of Arthropod Circulatory Systems,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/oarcs.ttl,https://i-adopt.github.io/terminologies/data/oarcs.json
+property,Ontology of Biological Attributes,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/oba.ttl,https://i-adopt.github.io/terminologies/data/oba.json
+property,The Extensible Observation Ontology,all,ontology,https://i-adopt.github.io/terminologies/data/oboe.ttl,https://i-adopt.github.io/terminologies/data/oboe.json
+method,The Extensible Observation Ontology,all,ontology,https://i-adopt.github.io/terminologies/data/oboe.ttl,https://i-adopt.github.io/terminologies/data/oboe.json
+unit,The Extensible Observation Ontology,all,ontology,https://i-adopt.github.io/terminologies/data/oboe.ttl,https://i-adopt.github.io/terminologies/data/oboe.json
+property,Ontology of Microbial Phenotypes,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/omp.ttl,https://i-adopt.github.io/terminologies/data/omp.json
+variable,OZCAR thesaurus,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/ozcar.ttl,https://i-adopt.github.io/terminologies/data/ozcar.json
+property,OZCAR thesaurus,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/ozcar.ttl,https://i-adopt.github.io/terminologies/data/ozcar.json
+entity,OZCAR thesaurus,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/ozcar.ttl,https://i-adopt.github.io/terminologies/data/ozcar.json
+property,Phenotype and Trait Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/pato.ttl,https://i-adopt.github.io/terminologies/data/pato.json
+property,Phytoplankton Traits Thesaurus,biodiversity; Functional morphology,thesaurus,https://i-adopt.github.io/terminologies/data/phytotraits_.ttl,https://i-adopt.github.io/terminologies/data/phytotraits_.json
+entity,planaria ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/plana.ttl,https://i-adopt.github.io/terminologies/data/plana.json
+property,planarian phenotype ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/planp.ttl,https://i-adopt.github.io/terminologies/data/planp.json
+entity,Plant Ontology,botany,ontology,https://i-adopt.github.io/terminologies/data/po.ttl,https://i-adopt.github.io/terminologies/data/po.json
+constraint,Plant Ontology,botany,ontology,https://i-adopt.github.io/terminologies/data/po.ttl,https://i-adopt.github.io/terminologies/data/po.json
+entity,Porifera Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/poro.ttl,https://i-adopt.github.io/terminologies/data/poro.json
+property,Plant Phenology Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/ppo.ttl,https://i-adopt.github.io/terminologies/data/ppo.json
+method,BODC parameter semantic model analytical method entity descriptions,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/puv_analytical_methods.ttl,https://i-adopt.github.io/terminologies/data/puv_analytical_methods.json
+entity,BODC parameter semantic model biological entities,marine biology,SKOS,https://i-adopt.github.io/terminologies/data/puv_biological_entities.ttl,https://i-adopt.github.io/terminologies/data/puv_biological_entities.json
+property,BODC parameter semantic model biological entity subcomponent terms,marine biology,SKOS,https://i-adopt.github.io/terminologies/data/puv_biological_subcomponents.ttl,https://i-adopt.github.io/terminologies/data/puv_biological_subcomponents.json
+entity,BODC parameter semantic model biological entity subcomponent terms,marine biology,SKOS,https://i-adopt.github.io/terminologies/data/puv_biological_subcomponents.ttl,https://i-adopt.github.io/terminologies/data/puv_biological_subcomponents.json
+entity,BODC parameter semantic model chemical substances,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/puv_chemical_substances.ttl,https://i-adopt.github.io/terminologies/data/puv_chemical_substances.json
+method,BODC parameter semantic model data processing entity descriptions,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/puv_data_processing_methods.ttl,https://i-adopt.github.io/terminologies/data/puv_data_processing_methods.json
+entity,BODC parameter semantic model sphere names,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/puv_domain_spheres.ttl,https://i-adopt.github.io/terminologies/data/puv_domain_spheres.json
+property,BODC parameter semantic model biological entity development stage terms,marine biology,SKOS,https://i-adopt.github.io/terminologies/data/puv_lifestages.ttl,https://i-adopt.github.io/terminologies/data/puv_lifestages.json
+entity,BODC parameter semantic model biological entity development stage terms,marine biology,SKOS,https://i-adopt.github.io/terminologies/data/puv_lifestages.ttl,https://i-adopt.github.io/terminologies/data/puv_lifestages.json
+entity,BODC parameter semantic model matrices,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/puv_matrices.ttl,https://i-adopt.github.io/terminologies/data/puv_matrices.json
+entity,BODC semantic model sphere phase names,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/puv_matrix_phases.ttl,https://i-adopt.github.io/terminologies/data/puv_matrix_phases.json
+entity,BODC parameter semantic model physical entity names,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/puv_physical_entities.ttl,https://i-adopt.github.io/terminologies/data/puv_physical_entities.json
+variable,BODC parameter semantic model parameter entity names,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/puv_properties.ttl,https://i-adopt.github.io/terminologies/data/puv_properties.json
+property,BODC parameter semantic model parameter entity names,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/puv_properties.ttl,https://i-adopt.github.io/terminologies/data/puv_properties.json
+method,BODC parameter semantic model sample preparation entity descriptions,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/puv_sample_preparation_methods.ttl,https://i-adopt.github.io/terminologies/data/puv_sample_preparation_methods.json
+property,BODC parameter semantic model biological entity sex category terms,marine biology,SKOS,https://i-adopt.github.io/terminologies/data/puv_sex_categories.ttl,https://i-adopt.github.io/terminologies/data/puv_sex_categories.json
+entity,BODC parameter semantic model biological entity sex category terms,marine biology,SKOS,https://i-adopt.github.io/terminologies/data/puv_sex_categories.ttl,https://i-adopt.github.io/terminologies/data/puv_sex_categories.json
+property,BODC parameter semantic model parameter statistic,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/puv_statistical_parameters.ttl,https://i-adopt.github.io/terminologies/data/puv_statistical_parameters.json
+method,BODC parameter semantic model parameter statistic,earth and related environmental sciences,SKOS,https://i-adopt.github.io/terminologies/data/puv_statistical_parameters.ttl,https://i-adopt.github.io/terminologies/data/puv_statistical_parameters.json
+property,"Quantities, Units, Dimensions and dataTypes",all,terminology,https://i-adopt.github.io/terminologies/data/qudt_quantity_kinds.ttl,https://i-adopt.github.io/terminologies/data/qudt_quantity_kinds.json
+unit,"Quantities, Units, Dimensions and dataTypes",all,,https://i-adopt.github.io/terminologies/data/qudt_units.ttl,https://i-adopt.github.io/terminologies/data/qudt_units.json
+entity,Spider Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/spd.ttl,https://i-adopt.github.io/terminologies/data/spd.json
+variable,Scientific Variables Ontology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/svo.ttl,https://i-adopt.github.io/terminologies/data/svo.json
+property,Scientific Variables Ontology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/svo.ttl,https://i-adopt.github.io/terminologies/data/svo.json
+entity,Scientific Variables Ontology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/svo.ttl,https://i-adopt.github.io/terminologies/data/svo.json
+constraint,Scientific Variables Ontology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/svo.ttl,https://i-adopt.github.io/terminologies/data/svo.json
+property,Semantic Web for Earth and Environmental Terminology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/sweet.ttl,https://i-adopt.github.io/terminologies/data/sweet.json
+entity,Semantic Web for Earth and Environmental Terminology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/sweet.ttl,https://i-adopt.github.io/terminologies/data/sweet.json
+constraint,Semantic Web for Earth and Environmental Terminology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/sweet.ttl,https://i-adopt.github.io/terminologies/data/sweet.json
+method,Semantic Web for Earth and Environmental Terminology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/sweet.ttl,https://i-adopt.github.io/terminologies/data/sweet.json
+unit,Semantic Web for Earth and Environmental Terminology,earth and related environmental sciences,ontology,https://i-adopt.github.io/terminologies/data/sweet.ttl,https://i-adopt.github.io/terminologies/data/sweet.json
+property,Plant Trait Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/to.ttl,https://i-adopt.github.io/terminologies/data/to.json
+variable,Uberon multi-species anatomy ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/uberon.ttl,https://i-adopt.github.io/terminologies/data/uberon.json
+entity,Uberon multi-species anatomy ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/uberon.ttl,https://i-adopt.github.io/terminologies/data/uberon.json
+property,Unified phenotype ontology (uPheno),biological sciences,ontology,https://i-adopt.github.io/terminologies/data/upheno.ttl,https://i-adopt.github.io/terminologies/data/upheno.json
+property,Vertebrate trait ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/vt.ttl,https://i-adopt.github.io/terminologies/data/vt.json
+entity,C. elegans Gross Anatomy Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/wbbt.ttl,https://i-adopt.github.io/terminologies/data/wbbt.json
+property,C. elegans phenotype,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/wbphenotype.ttl,https://i-adopt.github.io/terminologies/data/wbphenotype.json
+entity,WISE - Water Information System for Europe,earth and related environmental sciences,,https://i-adopt.github.io/terminologies/data/wise.ttl,https://i-adopt.github.io/terminologies/data/wise.json
+property,Xenopus Phenotype Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/xpo.ttl,https://i-adopt.github.io/terminologies/data/xpo.json
+entity,Xenopus Anatomy Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/yao.ttl,https://i-adopt.github.io/terminologies/data/yao.json
+constraint,Xenopus Anatomy Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/yao.ttl,https://i-adopt.github.io/terminologies/data/yao.json
+entity,zebrafish anatomy and development ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/zfa.ttl,https://i-adopt.github.io/terminologies/data/zfa.json
+property,Zooplankton Traits Thesaurus,Animal ecology; biodiversity; Functional morphology,thesaurus,https://i-adopt.github.io/terminologies/data/zooplanktraits.ttl,https://i-adopt.github.io/terminologies/data/zooplanktraits.json
+property,Zebrafish Phenotype Ontology,biological sciences,ontology,https://i-adopt.github.io/terminologies/data/zp.ttl,https://i-adopt.github.io/terminologies/data/zp.json

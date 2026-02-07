@@ -1,0 +1,301 @@
+from __future__ import annotations
+
+import datetime as _dt
+import re
+import warnings
+from typing import Iterable, Mapping, Optional, Sequence
+
+try:
+    import pandas as pd
+except ImportError as exc:  # pragma: no cover - import guard
+    raise ImportError("salmonpy requires pandas; install via `pip install pandas`.") from exc
+
+VALID_VALUE_TYPES = {"string", "integer", "number", "boolean", "date", "datetime"}
+VALID_COLUMN_ROLES = {"identifier", "attribute", "measurement", "temporal", "categorical"}
+REQUIRED_COLUMNS = [
+    "dataset_id",
+    "table_id",
+    "column_name",
+    "column_label",
+    "column_description",
+    "column_role",
+    "value_type",
+    "required",
+]
+SEMANTIC_COLUMNS = [
+    "unit_label",
+    "unit_iri",
+    "term_iri",
+    "term_type",
+    "property_iri",
+    "entity_iri",
+    "constraint_iri",
+    "method_iri",
+]
+
+
+def _ensure_dataframe(df, name: str = "df") -> pd.DataFrame:
+    if isinstance(df, pd.DataFrame):
+        return df.copy()
+    try:
+        return pd.DataFrame(df)
+    except Exception as exc:  # pragma: no cover - defensive
+        raise TypeError(f"{name} must be a pandas DataFrame or convertible object") from exc
+
+
+def infer_value_type(series: pd.Series) -> str:
+    """
+    Infer a value_type for a column.
+    """
+    s = pd.Series(series)
+    dtype = s.dtype
+
+    # Datetime: treat midnight-only timestamps as dates
+    if pd.api.types.is_datetime64_any_dtype(dtype):
+        non_null = s.dropna()
+        if len(non_null) > 0:
+            times = non_null.dt.time
+            if times.nunique() == 1 and times.iloc[0] == _dt.time(0, 0):
+                return "date"
+        return "datetime"
+
+    # Date detection for object columns of date objects
+    non_null = s.dropna()
+    if len(non_null) > 0:
+        sample = non_null.iloc[0]
+        if isinstance(sample, _dt.date) and not isinstance(sample, _dt.datetime):
+            return "date"
+
+    if pd.api.types.is_bool_dtype(dtype):
+        return "boolean"
+    if pd.api.types.is_integer_dtype(dtype):
+        return "integer"
+    if pd.api.types.is_numeric_dtype(dtype):
+        return "number"
+    return "string"
+
+
+def infer_column_role(col_name: str, series: pd.Series) -> str:
+    """
+    Infer column_role from name and contents.
+    """
+    name_lower = col_name.lower()
+
+    if re.search(r"^id$|_id$|^id_", name_lower):
+        return "identifier"
+    if re.search(r"^key$|_key$|^key_", name_lower):
+        return "identifier"
+
+    if re.search(r"date|time|dtt|timestamp", name_lower):
+        return "temporal"
+    if pd.api.types.is_datetime64_any_dtype(series):
+        return "temporal"
+
+    if re.search(r"count|total|number|amount|quantity|measure", name_lower):
+        return "measurement"
+
+    return "attribute"
+
+
+def infer_dictionary(
+    df: pd.DataFrame,
+    guess_types: bool = True,
+    dataset_id: str = "dataset-1",
+    table_id: str = "table-1",
+) -> pd.DataFrame:
+    """
+    Build a starter dictionary DataFrame aligned with the SDP schema.
+    """
+    data = _ensure_dataframe(df, "df")
+    col_names = list(data.columns)
+    n_cols = len(col_names)
+
+    dict_df = pd.DataFrame(
+        {
+            "dataset_id": [dataset_id] * n_cols,
+            "table_id": [table_id] * n_cols,
+            "column_name": col_names,
+            "column_label": col_names,
+            "column_description": [pd.NA] * n_cols,
+            "column_role": [pd.NA] * n_cols,
+            "value_type": [pd.NA] * n_cols,
+            "unit_label": [pd.NA] * n_cols,
+            "unit_iri": [pd.NA] * n_cols,
+            "term_iri": [pd.NA] * n_cols,
+            "term_type": [pd.NA] * n_cols,
+            "required": [False] * n_cols,
+            "property_iri": [pd.NA] * n_cols,
+            "entity_iri": [pd.NA] * n_cols,
+            "constraint_iri": [pd.NA] * n_cols,
+            "method_iri": [pd.NA] * n_cols,
+        }
+    )
+
+    if guess_types:
+        for idx, col_name in enumerate(col_names):
+            col = data[col_name]
+            dict_df.at[idx, "value_type"] = infer_value_type(col)
+            dict_df.at[idx, "column_role"] = infer_column_role(col_name, col)
+
+    return dict_df
+
+
+def validate_dictionary(dict_df: pd.DataFrame, require_iris: bool = False) -> pd.DataFrame:
+    """
+    Validate dictionary structure and value constraints.
+    """
+    if not isinstance(dict_df, pd.DataFrame):
+        raise TypeError("dict must be a pandas DataFrame")
+
+    df = dict_df.copy()
+
+    missing_cols = [c for c in REQUIRED_COLUMNS if c not in df.columns]
+    if missing_cols:
+        raise ValueError(f"Dictionary missing required columns: {missing_cols}")
+
+    # Ensure optional semantic columns exist
+    for col in SEMANTIC_COLUMNS:
+        if col not in df.columns:
+            df[col] = pd.NA
+
+    # Validate value types
+    invalid_types = df["value_type"].dropna().loc[~df["value_type"].isin(VALID_VALUE_TYPES)]
+    if not invalid_types.empty:
+        bad_rows = invalid_types.index.tolist()
+        raise ValueError(f"Invalid value_type in rows {bad_rows}: {invalid_types.tolist()}")
+
+    # Validate roles
+    if "column_role" in df.columns:
+        invalid_roles = df["column_role"].dropna().loc[~df["column_role"].isin(VALID_COLUMN_ROLES)]
+        if not invalid_roles.empty:
+            bad_rows = invalid_roles.index.tolist()
+            raise ValueError(f"Invalid column_role in rows {bad_rows}: {invalid_roles.tolist()}")
+
+    # Required flag must be boolean
+    if not pd.api.types.is_bool_dtype(df["required"]):
+        try:
+            df["required"] = df["required"].astype(bool)
+        except Exception as exc:
+            raise ValueError("required must be boolean") from exc
+
+    # Measurement guardrail: require I-ADOPT parts if term_iri is set or required
+    measurement_rows = (df["column_role"] == "measurement") & ~df["column_role"].isna()
+    if measurement_rows.any():
+        needed = ["term_iri", "property_iri", "entity_iri", "unit_iri"]
+        for field in needed:
+            missing_field = measurement_rows & (df[field].isna() | (df[field] == ""))
+            if require_iris and missing_field.any():
+                raise ValueError(f"Measurement columns require {field}; missing in rows {missing_field.index.tolist()}")
+
+    return df
+
+
+def _coerce_series(series: pd.Series, target: str, strict: bool = True) -> pd.Series:
+    try:
+        if target == "integer":
+            return pd.to_numeric(series, errors="raise").astype("Int64")
+        if target == "number":
+            return pd.to_numeric(series, errors="raise")
+        if target == "boolean":
+            return series.astype(bool)
+        if target == "date":
+            return pd.to_datetime(series, errors="raise").dt.date
+        if target == "datetime":
+            return pd.to_datetime(series, errors="raise")
+        return series.astype("string")
+    except Exception as exc:
+        if strict:
+            raise ValueError(f"Failed to coerce column to {target}: {exc}") from exc
+        warnings.warn(f"Coercion to {target} failed; keeping as string", RuntimeWarning)
+        return series.astype("string")
+
+
+def apply_salmon_dictionary(
+    df: pd.DataFrame,
+    dict_df: pd.DataFrame,
+    codes: Optional[pd.DataFrame] = None,
+    strict: bool = True,
+) -> pd.DataFrame:
+    """
+    Rename columns, coerce types, and apply codes using a validated dictionary.
+    """
+    data = _ensure_dataframe(df, "df")
+    dictionary = validate_dictionary(dict_df, require_iris=False)
+
+    result = data.copy()
+
+    table_ids = dictionary["table_id"].dropna().unique().tolist()
+    if len(table_ids) > 1:
+        warnings.warn(f"Dictionary contains multiple tables; applying first: {table_ids[0]}", RuntimeWarning)
+    table_id = table_ids[0] if table_ids else None
+    table_dict = dictionary[dictionary["table_id"] == table_id] if table_id is not None else dictionary
+
+    # Rename columns using column_label
+    rename_map = {
+        row.column_label: row.column_name
+        for _, row in table_dict.iterrows()
+        if row.column_name in result.columns and pd.notna(row.column_label) and row.column_label != ""
+    }
+    if rename_map:
+        # Inverse map: new_name: old_name
+        inverse = {v: k for k, v in rename_map.items()}
+        result = result.rename(columns=inverse)
+
+    # Coerce types and apply codes
+    codes_df = None
+    if codes is not None:
+        codes_df = _ensure_dataframe(codes, "codes")
+
+    for _, row in table_dict.iterrows():
+        original_name = row.column_name
+        new_name = row.column_label
+        target_type = row.value_type
+
+        if original_name not in data.columns:
+            continue
+
+        series = result[new_name] if new_name in result.columns else data[original_name]
+
+        if pd.notna(target_type):
+            series = _coerce_series(series, target=str(target_type), strict=strict)
+            result[new_name] = series
+
+        code_values = None
+        if codes_df is not None and "column_name" in codes_df.columns and original_name in codes_df["column_name"].values:
+            col_codes = codes_df
+            if table_id is not None:
+                col_codes = col_codes[col_codes["table_id"] == table_id]
+            col_codes = col_codes[col_codes["column_name"] == original_name]
+            if not col_codes.empty and new_name in result.columns:
+                code_values = list(col_codes["code_value"])
+                code_labels = list(col_codes.get("code_label", code_values))
+                try:
+                    result[new_name] = pd.Categorical(result[new_name], categories=code_values)
+                    result[new_name] = result[new_name].rename_categories(dict(zip(code_values, code_labels)))
+                except Exception:  # pragma: no cover - defensive
+                    result[new_name] = result[new_name].astype("string")
+
+        if row.get("column_role") == "categorical":
+            # Ensure categorical dtype even if codes are not provided
+            if code_values is None:
+                code_values = pd.unique(result[new_name].dropna())
+            try:
+                result[new_name] = pd.Categorical(result[new_name], categories=code_values)
+            except Exception:  # pragma: no cover - defensive
+                result[new_name] = result[new_name].astype("string")
+
+    required_cols = table_dict.loc[table_dict["required"] == True, "column_name"].tolist()
+    missing_required = [c for c in required_cols if c not in data.columns]
+    if missing_required:
+        warnings.warn(f"Missing required columns in data: {missing_required}", RuntimeWarning)
+
+    return result
+
+
+__all__ = [
+    "apply_salmon_dictionary",
+    "infer_column_role",
+    "infer_dictionary",
+    "infer_value_type",
+    "validate_dictionary",
+]

@@ -1,0 +1,86 @@
+project:
+  type: website
+  title: "FADS Open Science Hub"
+  output-dir: ./_site
+  render:
+    - "*.qmd"
+    - "!data/ontology/**"
+    - "!docs/**"
+
+freeze: auto
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    grid:
+      sidebar-width: 300px
+    linkcolor: "#446c8a"
+
+website:
+  favicon: images/logo.png
+  bread-crumbs: true
+
+  navbar:
+    search: true
+    left:
+      - text: "FADS Internal Wiki"
+        href: https://086gc.sharepoint.com/:u:/r/sites/FisheryAssessmentDataSectionWiki/SitePages/CollabHome.aspx?csf=1&web=1&e=tkJJk4
+      - text: "About"
+        href: about.qmd
+      - text: "Data Services"
+        href: fads-portfolio.qmd
+      - text: "Salmon Data Standards"
+        href: salmon-data-standards.qmd
+    tools:
+      - icon: github
+        menu:
+          - text: Source Code
+            href: https://github.com/dfo-pacific-science/data-stewardship-unit
+          - text: Report a Bug
+            href: https://github.com/dfo-pacific-science/data-stewardship-unit/issues
+    background: "#dae2e8"
+
+  sidebar:
+    collapse-level: 1
+    style: docked
+    background: light
+    contents:
+      - auto: how_to_guides
+      - section: "Reference Info"
+        contents:
+          - section: "Salmon Data Standards"
+            contents:
+              - text: "Overview"
+                href: salmon-data-standards.qmd
+              - section: "Guides"
+                contents:
+                  - standardize-data.qmd
+                  - publish-data.qmd
+                  - integrate-data.qmd
+              - reference_info/data_standards/controlled-vocabulary-thesauri.qmd
+              - reference_info/data_standards/salmon-data-exchange-package.qmd
+              - reference_info/ontology/formal-documentation.qmd
+              - reference_info/data_standards/ontology-data-package-gpt.qmd
+          - reference_info/dwc-obis-gbif.qmd
+          - reference_info/openDataPractices.qmd
+          - reference_info/publishing_data_externally.qmd
+          - section: "Tools"
+            contents:
+              - reference_info/tools/r_packages.qmd
+      - auto: tutorials
+      - section: "Deep Dives"
+        contents:
+          - /deep_dives/Stock Assessment Data 101 for Fisheries Science Reports.qmd
+    logo: images/logo.png
+    search: true
+
+  repo-url: https://github.com/dfo-pacific-science/data-stewardship-unit
+  repo-actions: [edit, source, issue]
+  page-footer:
+    right: "This site was created with [Quarto](https://quarto.org/) and is hosted with [GitHub Pages](https://pages.github.com/)."
+
+lang: en
+
+execute:
+  freeze: auto

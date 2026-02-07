@@ -1,0 +1,105 @@
+table_id,table_label,table_iri,field_name,field_label,field_description,term_iri,term_namespace
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,eventID,Event ID,Identifier for the Event,http://rs.tdwg.org/dwc/terms/eventID,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,parentEventID,Parent Event ID,Identifier for a parent Event,http://rs.tdwg.org/dwc/terms/parentEventID,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,eventDate,Event Date,Date or date interval when the Event occurred,http://rs.tdwg.org/dwc/terms/eventDate,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,eventTime,Event Time,Time or time interval when the Event occurred,http://rs.tdwg.org/dwc/terms/eventTime,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,startDayOfYear,Start Day Of Year,Earliest ordinal day of the year for the Event,http://rs.tdwg.org/dwc/terms/startDayOfYear,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,endDayOfYear,End Day Of Year,Latest ordinal day of the year for the Event,http://rs.tdwg.org/dwc/terms/endDayOfYear,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,year,Year,Four-digit year of the Event,http://rs.tdwg.org/dwc/terms/year,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,month,Month,Month of the Event,http://rs.tdwg.org/dwc/terms/month,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,day,Day,Day of the month for the Event,http://rs.tdwg.org/dwc/terms/day,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,fieldNumber,Field Number,Identifier assigned in the field,http://rs.tdwg.org/dwc/terms/fieldNumber,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,fieldNotes,Field Notes,Notes taken in the field,http://rs.tdwg.org/dwc/terms/fieldNotes,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,eventType,Event Type,Category or nature of the Event,http://rs.tdwg.org/dwc/terms/eventType,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,samplingProtocol,Sampling Protocol,Method used during the Event,http://rs.tdwg.org/dwc/terms/samplingProtocol,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,samplingEffort,Sampling Effort,Amount of effort expended during the Event,http://rs.tdwg.org/dwc/terms/samplingEffort,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,eventRemarks,Event Remarks,Comments or notes about the Event,http://rs.tdwg.org/dwc/terms/eventRemarks,dwc
+event,Event,http://rs.tdwg.org/dwc/dwc-dp/event,habitat,Habitat,Description of habitat,http://rs.tdwg.org/dwc/terms/habitat,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,occurrenceID,Occurrence ID,Identifier for the Occurrence,http://rs.tdwg.org/dwc/terms/occurrenceID,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,eventID,Event ID,Identifier for the related Event,http://rs.tdwg.org/dwc/terms/eventID,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,organismID,Organism ID,Identifier for the Organism,http://rs.tdwg.org/dwc/terms/organismID,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,taxonID,Taxon ID,Identifier for the Taxon,http://rs.tdwg.org/dwc/terms/taxonID,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,scientificName,Scientific Name,Full scientific name including authorship,http://rs.tdwg.org/dwc/terms/scientificName,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,scientificNameID,Scientific Name ID,Identifier for the scientific name,http://rs.tdwg.org/dwc/terms/scientificNameID,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,occurrenceStatus,Occurrence Status,Whether the Occurrence is present or absent,http://rs.tdwg.org/dwc/terms/occurrenceStatus,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,individualCount,Individual Count,Number of individuals in the Occurrence,http://rs.tdwg.org/dwc/terms/individualCount,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,organismQuantity,Organism Quantity,Quantity of organisms represented,http://rs.tdwg.org/dwc/terms/organismQuantity,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,organismQuantityType,Organism Quantity Type,Type or unit of organism quantity,http://rs.tdwg.org/dwc/terms/organismQuantityType,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,lifeStage,Life Stage,Life stage of the organism,http://rs.tdwg.org/dwc/terms/lifeStage,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,sex,Sex,Sex of the organism,http://rs.tdwg.org/dwc/terms/sex,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,reproductiveCondition,Reproductive Condition,Reproductive condition of the organism,http://rs.tdwg.org/dwc/terms/reproductiveCondition,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,behavior,Behavior,Behavior observed,http://rs.tdwg.org/dwc/terms/behavior,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,recordedBy,Recorded By,Person or group who recorded the Occurrence,http://rs.tdwg.org/dwc/terms/recordedBy,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,recordedByID,Recorded By ID,Identifier for the recorder,http://rs.tdwg.org/dwc/terms/recordedByID,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,identifiedBy,Identified By,Person who identified the organism,http://rs.tdwg.org/dwc/terms/identifiedBy,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,identifiedByID,Identified By ID,Identifier for the identifier,http://rs.tdwg.org/dwc/terms/identifiedByID,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,dateIdentified,Date Identified,Date the identification was made,http://rs.tdwg.org/dwc/terms/dateIdentified,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,identificationRemarks,Identification Remarks,Comments about the identification,http://rs.tdwg.org/dwc/terms/identificationRemarks,dwc
+occurrence,Occurrence,http://rs.tdwg.org/dwc/dwc-dp/occurrence,occurrenceRemarks,Occurrence Remarks,Comments about the Occurrence,http://rs.tdwg.org/dwc/terms/occurrenceRemarks,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,locationID,Location ID,Identifier for the Location,http://rs.tdwg.org/dwc/terms/locationID,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,locality,Locality,Specific description of the place,http://rs.tdwg.org/dwc/terms/locality,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,verbatimLocality,Verbatim Locality,Original textual description of the locality,http://rs.tdwg.org/dwc/terms/verbatimLocality,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,decimalLatitude,Decimal Latitude,Latitude in decimal degrees,http://rs.tdwg.org/dwc/terms/decimalLatitude,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,decimalLongitude,Decimal Longitude,Longitude in decimal degrees,http://rs.tdwg.org/dwc/terms/decimalLongitude,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,geodeticDatum,Geodetic Datum,Datum used for coordinates,http://rs.tdwg.org/dwc/terms/geodeticDatum,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,coordinateUncertaintyInMeters,Coordinate Uncertainty,Uncertainty around coordinates in meters,http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,coordinatePrecision,Coordinate Precision,Precision of coordinates in meters,http://rs.tdwg.org/dwc/terms/coordinatePrecision,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,country,Country,Name of the country,http://rs.tdwg.org/dwc/terms/country,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,countryCode,Country Code,Standard country code,http://rs.tdwg.org/dwc/terms/countryCode,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,stateProvince,State Province,State or province,http://rs.tdwg.org/dwc/terms/stateProvince,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,county,County,County or equivalent,http://rs.tdwg.org/dwc/terms/county,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,municipality,Municipality,Municipality or equivalent,http://rs.tdwg.org/dwc/terms/municipality,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,waterBody,Water Body,Name of the water body,http://rs.tdwg.org/dwc/terms/waterBody,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,island,Island,Name of island,http://rs.tdwg.org/dwc/terms/island,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,islandGroup,Island Group,Name of island group,http://rs.tdwg.org/dwc/terms/islandGroup,dwc
+location,Location,http://rs.tdwg.org/dwc/dwc-dp/location,continent,Continent,Name of continent,http://rs.tdwg.org/dwc/terms/continent,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,taxonID,Taxon ID,Identifier for the Taxon,http://rs.tdwg.org/dwc/terms/taxonID,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,scientificName,Scientific Name,Full scientific name,http://rs.tdwg.org/dwc/terms/scientificName,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,scientificNameAuthorship,Scientific Name Authorship,Authorship of the scientific name,http://rs.tdwg.org/dwc/terms/scientificNameAuthorship,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,taxonRank,Taxon Rank,Rank of the taxon,http://rs.tdwg.org/dwc/terms/taxonRank,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,kingdom,Kingdom,Kingdom name,http://rs.tdwg.org/dwc/terms/kingdom,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,phylum,Phylum,Phylum name,http://rs.tdwg.org/dwc/terms/phylum,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,class,Class,Class name,http://rs.tdwg.org/dwc/terms/class,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,order,Order,Order name,http://rs.tdwg.org/dwc/terms/order,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,family,Family,Family name,http://rs.tdwg.org/dwc/terms/family,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,genus,Genus,Genus name,http://rs.tdwg.org/dwc/terms/genus,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,specificEpithet,Specific Epithet,Specific epithet of the scientific name,http://rs.tdwg.org/dwc/terms/specificEpithet,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,infraspecificEpithet,Infraspecific Epithet,Infraspecific epithet of the scientific name,http://rs.tdwg.org/dwc/terms/infraspecificEpithet,dwc
+taxon,Taxon,http://rs.tdwg.org/dwc/dwc-dp/taxon,vernacularName,Vernacular Name,Common name,http://rs.tdwg.org/dwc/terms/vernacularName,dwc
+organism,Organism,http://rs.tdwg.org/dwc/dwc-dp/organism,organismID,Organism ID,Identifier for the Organism,http://rs.tdwg.org/dwc/terms/organismID,dwc
+organism,Organism,http://rs.tdwg.org/dwc/dwc-dp/organism,organismName,Organism Name,Name of the organism,http://rs.tdwg.org/dwc/terms/organismName,dwc
+organism,Organism,http://rs.tdwg.org/dwc/dwc-dp/organism,organismScope,Organism Scope,Scope of the organism concept,http://rs.tdwg.org/dwc/terms/organismScope,dwc
+organism,Organism,http://rs.tdwg.org/dwc/dwc-dp/organism,organismRemarks,Organism Remarks,Comments about the organism,http://rs.tdwg.org/dwc/terms/organismRemarks,dwc
+identification,Identification,http://rs.tdwg.org/dwc/dwc-dp/identification,identificationID,Identification ID,Identifier for a dwc:Identification,http://rs.tdwg.org/dwc/terms/identificationID,dwc
+identification,Identification,http://rs.tdwg.org/dwc/dwc-dp/identification,materialEntityID,Material Entity ID,Identifier for the material entity that was identified,http://rs.tdwg.org/dwc/terms/materialEntityID,dwc
+identification,Identification,http://rs.tdwg.org/dwc/dwc-dp/identification,occurrenceID,Occurrence ID,Identifier for the related occurrence,http://rs.tdwg.org/dwc/terms/occurrenceID,dwc
+identification,Identification,http://rs.tdwg.org/dwc/dwc-dp/identification,organismID,Organism ID,Identifier for the related organism,http://rs.tdwg.org/dwc/terms/organismID,dwc
+identification,Identification,http://rs.tdwg.org/dwc/dwc-dp/identification,verbatimIdentification,Verbatim Identification,Identification string as recorded,http://rs.tdwg.org/dwc/terms/verbatimIdentification,dwc
+identification,Identification,http://rs.tdwg.org/dwc/dwc-dp/identification,identifiedBy,Identified By,Agent who identified the organism,http://rs.tdwg.org/dwc/terms/identifiedBy,dwc
+identification,Identification,http://rs.tdwg.org/dwc/dwc-dp/identification,identifiedByID,Identified By ID,Identifier for the identifying agent,http://rs.tdwg.org/dwc/iri/identifiedBy,dwc
+identification,Identification,http://rs.tdwg.org/dwc/dwc-dp/identification,dateIdentified,Date Identified,Date the identification was made,http://rs.tdwg.org/dwc/terms/dateIdentified,dwc
+identification,Identification,http://rs.tdwg.org/dwc/dwc-dp/identification,identificationReferences,Identification References,References supporting the identification,http://rs.tdwg.org/dwc/terms/identificationReferences,dwc
+identification,Identification,http://rs.tdwg.org/dwc/dwc-dp/identification,identificationVerificationStatus,Identification Verification Status,Verification status of the identification,http://rs.tdwg.org/dwc/terms/identificationVerificationStatus,dwc
+identification,Identification,http://rs.tdwg.org/dwc/dwc-dp/identification,identificationRemarks,Identification Remarks,Comments about the identification,http://rs.tdwg.org/dwc/terms/identificationRemarks,dwc
+material,Material,http://rs.tdwg.org/dwc/dwc-dp/material,materialEntityID,Material Entity ID,Identifier for a dwc:MaterialEntity,http://rs.tdwg.org/dwc/terms/materialEntityID,dwc
+material,Material,http://rs.tdwg.org/dwc/dwc-dp/material,digitalSpecimenID,Digital Specimen ID,Identifier for a Digital Specimen resource,http://rs.tdwg.org/dwc/terms/digitalSpecimenID,dwc
+material,Material,http://rs.tdwg.org/dwc/dwc-dp/material,eventID,Event ID,Identifier for the related event,http://rs.tdwg.org/dwc/terms/eventID,dwc
+material,Material,http://rs.tdwg.org/dwc/dwc-dp/material,materialEntityType,Material Entity Type,Type of material entity,http://rs.tdwg.org/dwc/terms/materialEntityType,dwc
+material,Material,http://rs.tdwg.org/dwc/dwc-dp/material,institutionCode,Institution Code,Code for the owning institution,http://rs.tdwg.org/dwc/terms/institutionCode,dwc
+material,Material,http://rs.tdwg.org/dwc/dwc-dp/material,collectionCode,Collection Code,Code for the collection,http://rs.tdwg.org/dwc/terms/collectionCode,dwc
+material,Material,http://rs.tdwg.org/dwc/dwc-dp/material,catalogNumber,Catalog Number,Catalog number for the material entity,http://rs.tdwg.org/dwc/terms/catalogNumber,dwc
+material,Material,http://rs.tdwg.org/dwc/dwc-dp/material,collectedBy,Collected By,Agent(s) who collected the material,http://rs.tdwg.org/dwc/terms/recordedBy,dwc
+material,Material,http://rs.tdwg.org/dwc/dwc-dp/material,collectedByID,Collected By ID,Identifier for the collecting agent,http://rs.tdwg.org/dwc/terms/recordedByID,dwc
+material,Material,http://rs.tdwg.org/dwc/dwc-dp/material,preparations,Preparations,Preparations or preservation method,http://rs.tdwg.org/dwc/terms/preparations,dwc
+material,Material,http://rs.tdwg.org/dwc/dwc-dp/material,disposition,Disposition,Current disposition of the material,http://rs.tdwg.org/dwc/terms/disposition,dwc
+material-assertion,Material Assertion,http://rs.tdwg.org/dwc/dwc-dp/material-assertion,materialEntityID,Material Entity ID,Identifier for the material entity being asserted,http://rs.tdwg.org/dwc/terms/materialEntityID,dwc
+material-assertion,Material Assertion,http://rs.tdwg.org/dwc/dwc-dp/material-assertion,assertionID,Assertion ID,Identifier for a dwc:Assertion,http://example.com/term-pending/dwc/assertionID,dwc
+material-assertion,Material Assertion,http://rs.tdwg.org/dwc/dwc-dp/material-assertion,assertionType,Assertion Type,Category that matches the nature of the assertion,http://example.com/term-pending/dwc/assertionType,dwc
+material-assertion,Material Assertion,http://rs.tdwg.org/dwc/dwc-dp/material-assertion,assertionTypeIRI,Assertion Type (IRI),IRI for the assertion type,http://example.com/term-pending/dwciri/assertionTypeIRI,dwciri
+material-assertion,Material Assertion,http://rs.tdwg.org/dwc/dwc-dp/material-assertion,assertionValue,Assertion Value,Non-numeric asserted value,http://example.com/term-pending/dwc/assertionValue,dwc
+material-assertion,Material Assertion,http://rs.tdwg.org/dwc/dwc-dp/material-assertion,assertionValueNumeric,Assertion Value Numeric,Numeric asserted value,http://example.com/term-pending/dwc/assertionValueNumeric,dwc
+material-assertion,Material Assertion,http://rs.tdwg.org/dwc/dwc-dp/material-assertion,assertionUnit,Assertion Unit,Unit for the assertion value,http://example.com/term-pending/dwc/assertionUnit,dwc
+material-assertion,Material Assertion,http://rs.tdwg.org/dwc/dwc-dp/material-assertion,assertionUnitIRI,Assertion Unit (IRI),IRI for the assertion unit,http://example.com/term-pending/dwciri/assertionUnitIRI,dwciri
+material-assertion,Material Assertion,http://rs.tdwg.org/dwc/dwc-dp/material-assertion,assertionBy,Assertion By,Agent(s) who made the assertion,http://example.com/term-pending/dwc/assertionBy,dwc
+material-assertion,Material Assertion,http://rs.tdwg.org/dwc/dwc-dp/material-assertion,assertionByID,Assertion By ID,Identifier for the asserting agent,http://example.com/term-pending/dwciri/assertionByID,dwciri
+material-assertion,Material Assertion,http://rs.tdwg.org/dwc/dwc-dp/material-assertion,assertionRemarks,Assertion Remarks,Comments about the assertion,http://example.com/term-pending/dwc/assertionRemarks,dwc

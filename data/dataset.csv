@@ -1,0 +1,2 @@
+dataset_id,title,description,creator,contact_name,contact_email,license,temporal_start,temporal_end,spatial_extent,dataset_type,source_citation
+nuseds_fraser_coho_sample,NuSEDS Fraser-area coho excerpt (sample),Thirty-row sample of coho escapement records from PFMA 29 NuSEDS export for demonstration,Fisheries and Oceans Canada - Pacific Region,Fishery and Assessment Data Section,kayla.suhan@dfo-mpo.gc.ca,Open Government Licence - Canada,1996,2024,PFMA 29 (Fraser River watershed),escapement_estimates,NuSEDS-New Salmon Escapement Database System (2025-11-03 export)

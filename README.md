@@ -1,0 +1,68 @@
+# salmonpy
+
+Python mirror of the metasalmon R package for working with Salmon Data Packages (SDPs). Provides helpers to infer and validate dictionaries, search ontology terms, suggest semantics, suggest DwC-DP table/field mappings, and build/read Frictionless-style SDP bundles.
+
+## Quickstart
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+pip install -e .
+```
+
+```python
+import pandas as pd
+from salmonpy import infer_dictionary, validate_dictionary, create_salmon_datapackage
+
+df = pd.DataFrame({"species": ["Coho", "Chinook"], "count": [100, 200]})
+dict_df = infer_dictionary(df, dataset_id="demo", table_id="observations")
+dict_df.loc[dict_df["column_name"] == "count", "column_role"] = "measurement"
+validate_dictionary(dict_df)
+```
+
+## Access private CSVs from GitHub
+
+```python
+from salmonpy import github_raw_url, read_github_csv
+
+# Token discovery checks GITHUB_PAT/GH_TOKEN or your git credential store.
+# Run metasalmon::ms_setup_github() once in R to create/store a PAT with repo scope.
+
+dim_date = read_github_csv(
+    "data/gold/dimension_tables/dim_date.csv",
+    repo="dfo-pacific-science/qualark-data",
+)
+dim_date_pinned = read_github_csv(
+    "data/gold/dimension_tables/dim_date.csv",
+    ref="v0.3.0",
+    repo="dfo-pacific-science/qualark-data",
+)
+
+print(
+    github_raw_url(
+        "data/gold/dimension_tables/dim_date.csv",
+        repo="dfo-pacific-science/qualark-data",
+    )
+)
+```
+
+## Running tests
+```bash
+. .venv/bin/activate
+python -m unittest discover salmonpy/tests
+```
+
+## Compatibility
+- salmonpy 0.1.2 aligns with metasalmon 0.0.5 (parity tests in `tests/test_roundtrip.py`).
+
+## Extras
+- Validate an SDP: `python -m salmonpy.scripts.validate_sdp --dataset dataset.csv --tables tables.csv --dictionary column_dictionary.csv [--codes codes.csv] [--require-semantics]`
+- Draft a new term request: `python -m salmonpy.scripts.draft_new_term --label "<label>" --definition "<definition>" --term-type skos_concept --parent-iri <iri>`
+- Enable term search cache: set `SALMONPY_CACHE=1`
+
+## Publishing (PyPI)
+1) Bump the version in `pyproject.toml`.
+2) Install build tooling: `pip install build twine`.
+3) Build artifacts: `python -m build`.
+4) Upload: `twine upload dist/*` (requires PyPI credentials).
+5) Tag the release in git to match the version.
