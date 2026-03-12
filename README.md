@@ -12,12 +12,30 @@ pip install -e .
 
 ```python
 import pandas as pd
-from salmonpy import infer_dictionary, validate_dictionary, create_salmon_datapackage
+from salmonpy import (
+    create_salmon_datapackage,
+    infer_dictionary,
+    suggest_semantics,
+    validate_dictionary,
+)
 
 df = pd.DataFrame({"species": ["Coho", "Chinook"], "count": [100, 200]})
 dict_df = infer_dictionary(df, dataset_id="demo", table_id="observations")
 dict_df.loc[dict_df["column_name"] == "count", "column_role"] = "measurement"
+
+# Non-strict validation now warns (not aborts) if semantic IRIs are missing on measurement rows.
 validate_dictionary(dict_df)
+
+# If you want an explicit hard check for complete semantic coverage, use strict mode:
+# validate_dictionary(dict_df, require_iris=True)
+
+# Optional workflow:
+# dict_df = suggest_semantics(df, dict_df)  # attach candidate term/property/entity/unit IRIs
+# dict_df.loc[dict_df["column_name"] == "count", "term_iri"] = "https://w3id.org/gcdfo/salmon#..."
+# validate_dictionary(dict_df, require_iris=True)
+#
+# See for guidance:
+# https://dfo-pacific-science.github.io/metasalmon/articles/reusing-standards-salmon-data-terms.html
 ```
 
 ## Access private CSVs from GitHub

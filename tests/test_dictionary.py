@@ -60,6 +60,41 @@ class DictionaryTests(unittest.TestCase):
         self.assertTrue(isinstance(result["code_label"].dtype, pd.CategoricalDtype))
         self.assertEqual(list(result["code_label"].cat.categories), ["A", "B"])
 
+    def test_validation_warnings_for_missing_semantic_fields_non_strict(self):
+        bad = pd.DataFrame(
+            {
+                "dataset_id": ["d1", "d1"],
+                "table_id": ["tbl", "tbl"],
+                "column_name": ["id", "count"],
+                "column_label": ["ID", "Count"],
+                "column_description": ["row id", "spawners"],
+                "column_role": ["identifier", "measurement"],
+                "value_type": ["integer", "integer"],
+                "required": [True, True],
+            }
+        )
+        with self.assertWarnsRegex(
+            UserWarning,
+            "Hey, you definitely should fill those out before publishing",
+        ):
+            validate_dictionary(bad)
+
+    def test_validation_requires_missing_semantic_fields_in_strict_mode(self):
+        bad = pd.DataFrame(
+            {
+                "dataset_id": ["d1", "d1"],
+                "table_id": ["tbl", "tbl"],
+                "column_name": ["id", "count"],
+                "column_label": ["ID", "Count"],
+                "column_description": ["row id", "spawners"],
+                "column_role": ["identifier", "measurement"],
+                "value_type": ["integer", "integer"],
+                "required": [True, True],
+            }
+        )
+        with self.assertRaises(ValueError):
+            validate_dictionary(bad, require_iris=True)
+
     def test_validation_catches_missing_required_columns(self):
         bad = pd.DataFrame({"column_name": ["x"]})
         with self.assertRaises(ValueError):

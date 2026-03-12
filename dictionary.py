@@ -33,6 +33,13 @@ SEMANTIC_COLUMNS = [
     "method_iri",
 ]
 
+# Core ontology fields used in strict semantic checks for measurements.
+# - term/property/entity/unit are required for explicit I-ADOPT-style semantics.
+# - constraint/method are optional qualifiers (e.g., age/phase/method tags).
+CORE_SEMANTIC_FIELDS = ["term_iri", "property_iri", "entity_iri", "unit_iri"]
+OPTIONAL_SEMANTIC_FIELDS = ["constraint_iri", "method_iri"]
+MEASUREMENT_SEMANTIC_FIELDS = CORE_SEMANTIC_FIELDS + OPTIONAL_SEMANTIC_FIELDS
+
 
 def _ensure_dataframe(df, name: str = "df") -> pd.DataFrame:
     if isinstance(df, pd.DataFrame):
@@ -178,14 +185,56 @@ def validate_dictionary(dict_df: pd.DataFrame, require_iris: bool = False) -> pd
         except Exception as exc:
             raise ValueError("required must be boolean") from exc
 
-    # Measurement guardrail: require I-ADOPT parts if term_iri is set or required
+    # Measurement guardrail: required in strict mode, optional with warning otherwise
     measurement_rows = (df["column_role"] == "measurement") & ~df["column_role"].isna()
+    semantic_fields = CORE_SEMANTIC_FIELDS
+
     if measurement_rows.any():
-        needed = ["term_iri", "property_iri", "entity_iri", "unit_iri"]
-        for field in needed:
+        missing_by_field = {}
+        for field in semantic_fields:
             missing_field = measurement_rows & (df[field].isna() | (df[field] == ""))
-            if require_iris and missing_field.any():
-                raise ValueError(f"Measurement columns require {field}; missing in rows {missing_field.index.tolist()}")
+            if missing_field.any():
+                missing_by_field[field] = missing_field
+
+        if require_iris:
+            if missing_by_field:
+                missing_parts = []
+                for field, missing_field in missing_by_field.items():
+                    idx = missing_field[missing_field].index
+                    rows = (idx + 1).tolist()
+                    columns = df.loc[idx, "column_name"].tolist()
+                    if columns:
+                        fields = [f"{name} (row {row})" for name, row in zip(columns, rows)]
+                        missing_parts.append(f"{field}: {', '.join(fields)}")
+                raise ValueError(
+                    "Measurement columns require semantic fields; missing values in: "
+                    + "; ".join(missing_parts)
+                )
+
+        elif missing_by_field:
+            lines = []
+            for field, missing_mask in missing_by_field.items():
+                idx = missing_mask[missing_mask].index
+                rows = idx + 1
+                columns = df.loc[idx, "column_name"].tolist()
+                row_with_columns = [
+                    f"{name} (row {row})" for name, row in zip(columns, rows.tolist())
+                ]
+                lines.append(f"{field}: {', '.join(row_with_columns)}")
+
+            message = (
+                "Hey, you definitely should fill those out before publishing. "
+                "Missing semantic fields for measurement columns: "
+                + " | ".join(lines)
+                + "\nNext step: run suggest_semantics() to generate semantic candidates, "
+                + "then set "
+                + ", ".join(CORE_SEMANTIC_FIELDS)
+                + " for your measurement fields.\n"
+                + "See docs for I-ADOPT guidance: "
+                + "https://dfo-pacific-science.github.io/metasalmon/"
+                + "articles/reusing-standards-salmon-data-terms.html"
+            )
+            warnings.warn(message, UserWarning)
 
     return df
 

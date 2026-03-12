@@ -96,6 +96,32 @@ def test_validate_semantics_multiple_missing():
     assert len(notes_with_constraint) == 1
 
 
+def test_validate_semantics_reports_missing_semantics_fields():
+    """Test reporting of all semantic fields, including optional constraint/method."""
+    dict_df = pd.DataFrame({
+        'table_id': ['table1'],
+        'column_name': ['age'],
+        'column_role': ['measurement'],
+        'column_description': ['Age'],
+        'term_iri': [''],
+        'property_iri': [''],
+        'entity_iri': [''],
+        'unit_iri': ['m'],
+        'constraint_iri': [''],
+        'method_iri': [''],
+    })
+
+    result = validate_semantics(dict_df, require_iris=False)
+    missing = result['missing_semantics']
+
+    assert set(missing['field'].tolist()) == {
+        'term_iri', 'property_iri', 'entity_iri',
+        'constraint_iri', 'method_iri'
+    }
+    assert missing.shape[0] == 5
+    assert missing.loc[missing['field'] == 'term_iri', 'column_name'].iloc[0] == 'age'
+
+
 def test_validate_semantics_empty_dict():
     """Test with empty dictionary."""
     dict_df = pd.DataFrame({

@@ -5,6 +5,11 @@ from pathlib import Path
 
 import pandas as pd
 
+try:
+    from salmonpy.dictionary import CORE_SEMANTIC_FIELDS
+except Exception:  # pragma: no cover - script fallback when executed directly
+    from dictionary import CORE_SEMANTIC_FIELDS
+
 
 def load_csv(path):
     try:
@@ -68,7 +73,7 @@ def validate_column_dictionary(df, dataset_id, table_ids, require_semantics: boo
         measurement = df[df["column_role"] == "measurement"]
         if not measurement.empty:
             missing_fields = {}
-            for field in ["term_iri", "property_iri", "entity_iri", "unit_iri"]:
+            for field in CORE_SEMANTIC_FIELDS:
                 if field not in df.columns:
                     missing_fields[field] = "column missing"
                 else:
@@ -100,7 +105,15 @@ def main():
     parser.add_argument("--tables", required=True, help="Path to tables.csv")
     parser.add_argument("--dictionary", required=True, help="Path to column_dictionary.csv")
     parser.add_argument("--codes", help="Path to codes.csv (optional)")
-    parser.add_argument("--require-semantics", action="store_true", help="Require measurement columns to have term/unit/property/entity IRIs")
+    parser.add_argument(
+        "--require-semantics",
+        action="store_true",
+        help=(
+            "Require measurement columns to have "
+            + ", ".join(CORE_SEMANTIC_FIELDS)
+            + " IRIs"
+        )
+    )
     args = parser.parse_args()
 
     dataset_path = Path(args.dataset)

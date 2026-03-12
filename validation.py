@@ -1,8 +1,8 @@
 """
 Graceful semantic validation with gap reporting.
 
-This module provides user-friendly validation that reports missing term IRIs
-without aborting the entire validation run.
+This module provides user-friendly validation that reports semantic gaps without
+aborting the entire validation run.
 """
 
 from typing import Dict, Optional, List
@@ -20,8 +20,9 @@ def validate_semantics(
     Validate semantics with graceful gap reporting.
 
     Ensures structural requirements, adds a `required` column if missing,
-    runs validate_dictionary(), and reports missing `term_iri` for
-    measurement columns without aborting the entire run.
+    runs validate_dictionary(), and reports missing `term_iri` for measurement
+    columns. In default mode validate_dictionary() warns (instead of raising)
+    when semantic fields are missing, so the caller can continue.
 
     Parameters
     ----------
@@ -42,6 +43,8 @@ def validate_semantics(
         - dict: normalized dictionary with `required` column
         - issues: DataFrame of structural issues (empty if none)
         - missing_terms: DataFrame of measurement rows missing `term_iri`
+        - missing_semantics: DataFrame of measurement rows missing any semantic field
+          (core + optional)
 
     Examples
     --------
@@ -56,8 +59,11 @@ def validate_semantics(
     ...     print("Proposed terms:")
     ...     print(result['missing_terms'][['term_label', 'term_definition']])
     """
-    # Import validate_dictionary from dictionary module
-    from dictionary import validate_dictionary
+    # Import dictionary helpers (supports both package and direct module execution)
+    try:
+        from .dictionary import validate_dictionary, CORE_SEMANTIC_FIELDS, OPTIONAL_SEMANTIC_FIELDS
+    except Exception:  # pragma: no cover - compatibility for direct module execution
+        from dictionary import validate_dictionary, CORE_SEMANTIC_FIELDS, OPTIONAL_SEMANTIC_FIELDS
 
     dict_df = dictionary.copy()
 
@@ -67,12 +73,34 @@ def validate_semantics(
 
     issues = pd.DataFrame()
     missing_terms = pd.DataFrame()
+    missing_semantics = pd.DataFrame(columns=["field", "table_id", "column_name"])
 
     # Try to run validate_dictionary
     try:
         validate_dictionary(dict_df, require_iris=require_iris)
     except Exception as e:
         issues = pd.DataFrame({'message': [str(e)]})
+
+    # Find measurement columns missing semantic fields (core + optional qualifiers)
+    semantic_rows = dict_df['column_role'] == 'measurement'
+    if semantic_rows.any():
+        all_semantic_fields = CORE_SEMANTIC_FIELDS + OPTIONAL_SEMANTIC_FIELDS
+
+        for field in all_semantic_fields:
+            if field not in dict_df.columns:
+                continue
+            missing_mask = semantic_rows & (dict_df[field].isna() | (dict_df[field] == ''))
+            if missing_mask.any():
+                cols = [c for c in ["table_id", "column_name"] if c in dict_df.columns]
+                if not cols:
+                    continue
+                rows = dict_df.loc[missing_mask, cols].copy()
+                rows["field"] = field
+                rows = rows[["field", *cols]]
+                if "table_id" not in cols:
+                    rows["table_id"] = pd.NA
+                    rows = rows[["field", "table_id", "column_name"]]
+                missing_semantics = pd.concat([missing_semantics, rows[["field", "table_id", "column_name"]]])
 
     # Find measurement columns missing term_iri
     missing_mask = (
@@ -104,7 +132,8 @@ def validate_semantics(
     return {
         'dict': dict_df,
         'issues': issues,
-        'missing_terms': missing_terms
+        'missing_terms': missing_terms,
+        'missing_semantics': missing_semantics,
     }
 
 
